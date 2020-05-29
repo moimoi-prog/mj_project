@@ -23,10 +23,6 @@ from werkzeug.utils import secure_filename
 
 USERNAME = "Evi"
 PASSWORD = "evi0129"
-MYSQL_HOST = "127.0.0.1"
-MYSQL_USER = "root"
-MYSQL_PASS = ""
-
 
 # -----------------------------------------------
 # メソッドを定義
@@ -34,9 +30,8 @@ MYSQL_PASS = ""
 # インスタンスの生成
 app = Flask(__name__)
 app.secret_key = 'hogehoge'
-PEOPLE_FOLDER = '/Users/moimoi_adm/PycharmProjects/mj_project/static/image'
-app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
-app.config["CACHE_TYPE"] = "null"
+UPLOAD_FOLDER = './static/image/'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 # configの読み込み
@@ -82,7 +77,6 @@ def judge():
             img_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             img_file.save(img_url)
             result_str = judge_tile(img_url)
-            img_url = "/static/image/" + filename
 
             return render_template('index.html', result_img=img_url, result_str=result_str)
         else:
