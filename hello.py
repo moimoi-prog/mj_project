@@ -22,7 +22,7 @@ from sympy import Symbol, solve
 from werkzeug.utils import secure_filename
 
 USERNAME = "Evi"
-PASSWORD = "evi0129"
+PASSWORD = "evi"
 
 # -----------------------------------------------
 # メソッドを定義
@@ -110,50 +110,47 @@ def judge_tile(path):
 
     # 牌の種類と画像を紐づけた辞書を作成する
     # 明示的に紐づけるために、１つずつ格納する
-    dic_sample_img.setdefault("一萬", cv2.cvtColor(cv2.imread("img/sample/m1.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("二萬", cv2.cvtColor(cv2.imread("img/sample/m2.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("三萬", cv2.cvtColor(cv2.imread("img/sample/m3.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("四萬", cv2.cvtColor(cv2.imread("img/sample/m4.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("五萬", cv2.cvtColor(cv2.imread("img/sample/m5.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("六萬", cv2.cvtColor(cv2.imread("img/sample/m6.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("七萬", cv2.cvtColor(cv2.imread("img/sample/m7.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("八萬", cv2.cvtColor(cv2.imread("img/sample/m8.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("九萬", cv2.cvtColor(cv2.imread("img/sample/m9.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("一筒", cv2.cvtColor(cv2.imread("img/sample/p1.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("二筒", cv2.cvtColor(cv2.imread("img/sample/p2.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("三筒", cv2.cvtColor(cv2.imread("img/sample/p3.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("四筒", cv2.cvtColor(cv2.imread("img/sample/p4.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("五筒", cv2.cvtColor(cv2.imread("img/sample/p5.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("六筒", cv2.cvtColor(cv2.imread("img/sample/p6.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("七筒", cv2.cvtColor(cv2.imread("img/sample/p7.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("八筒", cv2.cvtColor(cv2.imread("img/sample/p8.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("九筒", cv2.cvtColor(cv2.imread("img/sample/p9.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("一索", cv2.cvtColor(cv2.imread("img/sample/s1.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("二索", cv2.cvtColor(cv2.imread("img/sample/s2.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("三索", cv2.cvtColor(cv2.imread("img/sample/s3.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("四索", cv2.cvtColor(cv2.imread("img/sample/s4.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("五索", cv2.cvtColor(cv2.imread("img/sample/s5.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("六索", cv2.cvtColor(cv2.imread("img/sample/s6.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("七索", cv2.cvtColor(cv2.imread("img/sample/s7.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("八索", cv2.cvtColor(cv2.imread("img/sample/s8.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("九索", cv2.cvtColor(cv2.imread("img/sample/s9.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("北", cv2.cvtColor(cv2.imread("img/sample/north.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("南", cv2.cvtColor(cv2.imread("img/sample/south.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("東", cv2.cvtColor(cv2.imread("img/sample/east.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("西", cv2.cvtColor(cv2.imread("img/sample/west.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("白", cv2.cvtColor(cv2.imread("img/sample/haku.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("發", cv2.cvtColor(cv2.imread("img/sample/hatsu.png"), cv2.COLOR_BGR2GRAY))
-    dic_sample_img.setdefault("中", cv2.cvtColor(cv2.imread("img/sample/chun.png"), cv2.COLOR_BGR2GRAY))
-
-    # 画像のパスを定義
-    input_path = "img/before/front.jpeg"
+    dic_sample_img.setdefault("一萬", cv2.cvtColor(cv2.imread("static/image/sample/m1.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("二萬", cv2.cvtColor(cv2.imread("static/image/sample/m2.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("三萬", cv2.cvtColor(cv2.imread("static/image/sample/m3.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("四萬", cv2.cvtColor(cv2.imread("static/image/sample/m4.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("五萬", cv2.cvtColor(cv2.imread("static/image/sample/m5.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("六萬", cv2.cvtColor(cv2.imread("static/image/sample/m6.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("七萬", cv2.cvtColor(cv2.imread("static/image/sample/m7.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("八萬", cv2.cvtColor(cv2.imread("static/image/sample/m8.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("九萬", cv2.cvtColor(cv2.imread("static/image/sample/m9.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("一筒", cv2.cvtColor(cv2.imread("static/image/sample/p1.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("二筒", cv2.cvtColor(cv2.imread("static/image/sample/p2.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("三筒", cv2.cvtColor(cv2.imread("static/image/sample/p3.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("四筒", cv2.cvtColor(cv2.imread("static/image/sample/p4.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("五筒", cv2.cvtColor(cv2.imread("static/image/sample/p5.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("六筒", cv2.cvtColor(cv2.imread("static/image/sample/p6.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("七筒", cv2.cvtColor(cv2.imread("static/image/sample/p7.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("八筒", cv2.cvtColor(cv2.imread("static/image/sample/p8.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("九筒", cv2.cvtColor(cv2.imread("static/image/sample/p9.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("一索", cv2.cvtColor(cv2.imread("static/image/sample/s1.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("二索", cv2.cvtColor(cv2.imread("static/image/sample/s2.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("三索", cv2.cvtColor(cv2.imread("static/image/sample/s3.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("四索", cv2.cvtColor(cv2.imread("static/image/sample/s4.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("五索", cv2.cvtColor(cv2.imread("static/image/sample/s5.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("六索", cv2.cvtColor(cv2.imread("static/image/sample/s6.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("七索", cv2.cvtColor(cv2.imread("static/image/sample/s7.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("八索", cv2.cvtColor(cv2.imread("static/image/sample/s8.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("九索", cv2.cvtColor(cv2.imread("static/image/sample/s9.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("北", cv2.cvtColor(cv2.imread("static/image/sample/north.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("南", cv2.cvtColor(cv2.imread("static/image/sample/south.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("東", cv2.cvtColor(cv2.imread("static/image/sample/east.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("西", cv2.cvtColor(cv2.imread("static/image/sample/west.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("白", cv2.cvtColor(cv2.imread("static/image/sample/haku.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("發", cv2.cvtColor(cv2.imread("static/image/sample/hatsu.png"), cv2.COLOR_BGR2GRAY))
+    dic_sample_img.setdefault("中", cv2.cvtColor(cv2.imread("static/image/sample/chun.png"), cv2.COLOR_BGR2GRAY))
 
     # 画像が存在するかを確認
-    if not os.path.exists(input_path):
-        print(input_path + "は存在しません。")
+    if not os.path.exists(path):
+        print(path + "は存在しません。")
 
     # 画像を読み込む
-    img = cv2.imread(input_path)
+    img = cv2.imread(path)
 
     # 画像の縦横の長さを取得
     height, width = img.shape[:2]
