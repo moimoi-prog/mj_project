@@ -1,0 +1,21 @@
+{% extends "template.html" %}}
+{% block content %}
+{% if session.logged_in %}
+  <form action="{{ url_for('judge') }}" method=post enctype="multipart/form-data">
+    <dl>
+      <dt>手配の画像を選択してください:
+      <dd><input type=file id="img_file" name=img_file>
+      <dd><input type=submit value=判定>
+    </dl>
+  </form>
+
+  {% if result_img %}
+    <p>
+        <img src={{result_img}} width="1000" height="200" alt="input">
+    </p>
+  {% endif %}
+  {% if result_str %}
+    <p>{{ result_str }}</p>
+  {% endif %}
+{% endif %}
+{% endblock %}
